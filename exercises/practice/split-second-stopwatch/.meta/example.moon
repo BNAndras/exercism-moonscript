@@ -40,7 +40,7 @@ class Stopwatch
     @_lapSeconds += seconds
 
   _asSeconds: (timestamp) =>
-    h, m, s = unpack [tonumber x for x in timestamp\gmatch "%d+"]
+    h, m, s = table.unpack [tonumber x for x in timestamp\gmatch "%d+"]
     h * 3600 + m * 60 + s
 
   _timestamp: (seconds) =>
